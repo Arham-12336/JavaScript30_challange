@@ -1,4 +1,4 @@
-<img src="./logo.png" width="500">
+<img src="./logo.png" width="700">
 
 # Introduction
 This repository is made with project that are being made in the javascript30 days challenge.All projects are free to use.
