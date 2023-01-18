@@ -1,0 +1,76 @@
+
+html {
+    box-sizing: border-box;
+    background: #ffc600;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+  }
+  
+body{
+    margin: 0;
+}
+*, *::before, *:after{
+    box-sizing: inherit;
+}
+
+.panels{
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+.panel{
+    background: #6B0F9C;
+    box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+    color: white;
+    text-align: center;
+    align-items: center;
+    transition:
+
+    /*This will do the transition*/
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background-image 0.2s;
+    font-size: 20px;
+    background-size: cover;
+    background-position: center;
+    flex: 1; /*each one of them are equally distributed*/
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+}
+.panel1 { background-image:url(./images/p1.jpeg); }
+.panel2 { background-image:url(./images/p2.jpg); }
+.panel3 { background-image:url(./images/p3.jpeg); }
+.panel4 { background-image:url(./images/p4.jpeg); }
+.panel5 { background-image:url(./images/p5.jpeg); }
+
+.panel > *:first-child{transform: translateY(-100%);}
+/*This will hide the first child "HEY GIVE Experience"*/
+.panel.open > *:first-child{transform: translateY(0);}
+/*This will show the first child*/
+.panel > *:last-child{transform: translateY(100%);}
+/*This will hide the last child */
+.panel.open > *:last-child{transform: translateY(0);}
+/*This will show the first child*/
+
+.panel >*{
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+}
+
+.panel p{
+    text-transform: uppercase;;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 2rem;
+}
+.panel p:nth-child(2){
+    font-size: 1.5rem;
+}
+.panel.panel.open{
+    flex: 5;   /*This means that when we have the active class it will takes 5 times than the rest of them*/
+    font-size: 40px;
+}
