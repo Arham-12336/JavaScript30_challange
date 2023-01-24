@@ -21,6 +21,9 @@ const inventors = [
     'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
   ];
 
+      // Array.prototype.filter()
+    // 1. Filter the list of inventors for those who were born in the 1500's
+
     // The filter method takes an array and do functions on each element of the array.
 //   const fifteen=inventors.filter(inventor =>{
 //     if(inventor.year >= 1500 && inventor.year <= 1600){
@@ -34,3 +37,64 @@ const inventors = [
 const fifteen = inventors.filter(inventor => inventor.year >= 1500 && inventor.year <= 1600);
 
   console.table(fifteen)
+
+     // Array.prototype.map()
+    // 2. Give us an array of the inventor first and last names
+
+    //What map does is take an array, do something and return an array of the same size as the original array.
+  const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+
+  console.table(fullNames)
+
+   // Array.prototype.map()
+    // 2. Give us an array of the inventor first and last names
+
+//   const orders=inventors.sort(function(a,b){
+//     if (a.year > b.year){
+//         return 1;
+//     }
+//     else{
+//         return -1;
+//     }
+//   }
+// );
+// Another way to do it
+ 
+const orders=inventors.sort((a,b)=> a.year> b.year? 1 : -1);
+
+console.table(orders)
+
+    // Array.prototype.reduce()
+    // 4. How many years did all the inventors live?
+
+
+    const totalYears = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0);
+    
+    console.log(totalYears);
+
+
+
+    const alpha=people.sort(function(lastone,nextone) {
+      const [alast,afirst]=lastone.split(', ');
+      const[blast,bfirst]=nextone.split(', ');
+      return alast>blast? 1 : -1;
+      
+    });
+    console.log(alpha);
+
+
+     // 8. Reduce Exercise
+    // Sum up the instances of each of these
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+    const transportation=data.reduce((obj,item)=>{
+      if(!obj[item]){
+        obj[item]=0;
+      }
+      obj[item]+=1;
+      return obj;
+    },{});
+
+    console.log(transportation);
+
+
+
